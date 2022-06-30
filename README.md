@@ -1,3 +1,2 @@
 # jjemba
-learning
-learning git clone
+this file is only about the documentation of the project
