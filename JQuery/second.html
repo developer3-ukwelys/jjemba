@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script type="text/javascript">
+        function hde(){
+            //$(".first").hide();
+            $("#frt").ready(
+                function(){
+                    $("#frt").hide();
+                    $(".first").hide();
+                }
+            );
+        }
+
+        //another method
+        $("document").ready(function(){
+            $(".shw").click(function(){
+                $("#frt").show(1000);
+                $(".first").show(300);
+            });
+
+        });
+
+        $("document").ready(function(){
+            if($("window").width()<800){
+                $("document").css("font-size","20px");
+            }
+        });
+
+        
+
+        $("document").ready(function(){
+            $("#deft").click(function(){
+                $(".second").ready(function(){
+                    $(".second").css("background-color","skyblue");
+                    $(".second").css("border-radius","0 10px 10px 0");
+                    $(".second").css("color","red");
+                });
+
+                $(".first").ready(function(){
+                    $(".first").css("background-color","green");
+                    $(".first").css("border-radius","10px 0 0 10px");
+                    $(".first").css("margin-left","1em");
+                    $(".second").css("font-weight","bolder");
+                    $(".second").css("color","red");
+                    $(".first").css("color","white");
+                });
+
+                $(".deft").ready(function(){
+                    $(".second").value("DEFAULT");
+                    $(".second").css("border-radius","10px");
+                    $(".second").css("color","red");
+                });
+            });
+        });
+    </script>
+    <style>
+        .tnb{
+            display:flex;
+            float:left;
+        }
+        .tnb div{
+            margin:1em;
+        }
+
+        .space{
+            display:flex;
+            float:left;
+        }
+        .first{
+            width:20%;
+            padding:2em;
+            color:dodgerblue;
+        }
+        .second{
+            font-weight:bold;
+            width: 30%;
+            background-color:rgba(120, 90, 100, 0.4);
+            color: green;
+            padding: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project</h1>
+    <div class="tnb">
+        <div><button id="frt" onclick="hde()">HIDE</button></div>
+        <div><button class="shw">SHOW</button></div>
+        
+    </div>
+    <div class="space">
+        <div class="first">
+            <h3>Column 1</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur 
+                adipisicing elit. Magni ea amet perferendis! Quia voluptatum
+                voluptates voluptate minus magni eum ullam, quas vero autem
+                quos, labore a sit laborum ipsa enim!
+            </p>
+        </div>
+        <div class="second">
+            <h2>Column 1</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur 
+                adipisicing elit. Magni ea amet perferendis! Quia voluptatum
+                voluptates voluptate minus magni eum ullam, quas vero autem
+                quos, labore a sit laborum ipsa enim!
+            </p>
+        </div>
+    </div>
+    <div>
+        <button id="deft">VIEW MODE</button>
+    </div>
+    
+    
+</body>
+</html>
